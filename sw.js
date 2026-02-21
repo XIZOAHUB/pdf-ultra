@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pdf-ultra-v1.0.1';
+const CACHE_NAME = 'pdf-ultra-v1.1.1';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
