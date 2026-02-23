@@ -338,53 +338,200 @@
       <button class="btn-clear" onclick="clearFile()"><i class="fa-solid fa-xmark"></i></button>
     </div>
 
-    <div id="cat-pdf-to" class="cat-page active">
+<div id="cat-pdf-to" class="cat-page active">
       <h2 class="section-title">Convert PDF to...</h2>
+
+      <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; margin-top: 8px;">Document Formats</h3>
       <div class="conv-grid">
         <div class="conv-card" onclick="selectConversion(this, 'pdf-to-docx')">
-          <i class="fa-solid fa-file-word c-icon"></i><div class="c-title">Word</div><div class="c-desc">Extract to .docx</div>
+          <i class="fa-solid fa-file-word c-icon"></i><div class="c-title">Word</div><div class="c-desc">Editable .docx</div>
         </div>
-        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-xlsx')">
-          <i class="fa-solid fa-file-excel c-icon"></i><div class="c-title">Excel</div><div class="c-desc">Extract to .xlsx</div>
-        </div>
-        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-jpg')">
-          <i class="fa-solid fa-file-image c-icon"></i><div class="c-title">JPG / PNG</div><div class="c-desc">Pages to images</div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-pptx')">
+          <i class="fa-solid fa-file-powerpoint c-icon"></i><div class="c-title">PowerPoint</div><div class="c-desc">Slides as .pptx</div>
         </div>
         <div class="conv-card" onclick="selectConversion(this, 'pdf-to-txt')">
-          <i class="fa-solid fa-file-lines c-icon"></i><div class="c-title">Text</div><div class="c-desc">Extract plain text</div>
+          <i class="fa-solid fa-file-lines c-icon"></i><div class="c-title">Text</div><div class="c-desc">Raw .txt file</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-rtf')">
+          <i class="fa-solid fa-file-pen c-icon"></i><div class="c-title">RTF</div><div class="c-desc">Rich text format</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; margin-top: 24px;">Image Formats</h3>
+      <div class="conv-grid">
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-jpg')">
+          <i class="fa-solid fa-file-image c-icon"></i><div class="c-title">JPG</div><div class="c-desc">Standard images</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-png')">
+          <i class="fa-solid fa-image c-icon"></i><div class="c-title">PNG</div><div class="c-desc">High-quality images</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-svg')">
+          <i class="fa-solid fa-bezier-curve c-icon"></i><div class="c-title">SVG</div><div class="c-desc">Vector graphics</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-extract-img')">
+          <i class="fa-solid fa-images c-icon"></i><div class="c-title">Extract Images</div><div class="c-desc">Get all photos</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; margin-top: 24px;">Data & Web Formats</h3>
+      <div class="conv-grid">
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-xlsx')">
+          <i class="fa-solid fa-file-excel c-icon"></i><div class="c-title">Excel</div><div class="c-desc">Tables to .xlsx</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-csv')">
+          <i class="fa-solid fa-file-csv c-icon"></i><div class="c-title">CSV</div><div class="c-desc">Spreadsheet data</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-html')">
+          <i class="fa-brands fa-html5 c-icon"></i><div class="c-title">HTML</div><div class="c-desc">Web page view</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-json')">
+          <i class="fa-solid fa-file-code c-icon"></i><div class="c-title">JSON / XML</div><div class="c-desc">Developer data</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-epub')">
+          <i class="fa-solid fa-book-open c-icon"></i><div class="c-title">EPUB</div><div class="c-desc">eBook format</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; margin-top: 24px;">Specialized & Pro</h3>
+      <div class="conv-grid" style="margin-bottom: 40px;">
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-audio')">
+          <i class="fa-solid fa-file-audio c-icon"></i><div class="c-title">Audio</div><div class="c-desc">Listen to PDF (MP3)</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-markdown')">
+          <i class="fa-brands fa-markdown c-icon"></i><div class="c-title">Markdown</div><div class="c-desc">Export as .md</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-pdfa')">
+          <i class="fa-solid fa-file-shield c-icon"></i><div class="c-title">PDF/A</div><div class="c-desc">Archive format</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-extract-fonts')">
+          <i class="fa-solid fa-font c-icon"></i><div class="c-title">Extract Fonts</div><div class="c-desc">Get text fonts</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-to-bw')">
+          <i class="fa-solid fa-circle-half-stroke c-icon"></i><div class="c-title">Grayscale</div><div class="c-desc">Convert to B&W</div>
         </div>
       </div>
     </div>
-
+    
+    
+    
     <div id="cat-to-pdf" class="cat-page">
       <h2 class="section-title">Create PDF from...</h2>
+
+      <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; margin-top: 8px;">Images & Camera</h3>
       <div class="conv-grid">
         <div class="conv-card" onclick="selectConversion(this, 'img-to-pdf')">
-          <i class="fa-solid fa-image c-icon"></i><div class="c-title">Images</div><div class="c-desc">JPG/PNG to PDF</div>
+          <i class="fa-solid fa-file-image c-icon"></i><div class="c-title">JPG / JPEG</div><div class="c-desc">Photos to PDF</div>
         </div>
+        <div class="conv-card" onclick="selectConversion(this, 'img-to-pdf')">
+          <i class="fa-solid fa-image c-icon"></i><div class="c-title">PNG Files</div><div class="c-desc">Lossless to PDF</div>
+        </div>
+        <div class="conv-card" onclick="switchTab('cat-scan')">
+          <i class="fa-solid fa-camera c-icon"></i><div class="c-title">Camera Scan</div><div class="c-desc">Scan documents</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; margin-top: 24px;">Documents & Text</h3>
+      <div class="conv-grid">
         <div class="conv-card" onclick="selectConversion(this, 'txt-to-pdf')">
-          <i class="fa-solid fa-file-alt c-icon"></i><div class="c-title">Text</div><div class="c-desc">TXT to PDF</div>
+          <i class="fa-solid fa-file-alt c-icon"></i><div class="c-title">Text File</div><div class="c-desc">TXT to PDF</div>
+        </div>
+         <div class="conv-card" onclick="selectConversion(this, 'rtf-to-pdf')">
+          <i class="fa-solid fa-file-pen c-icon"></i><div class="c-title">RTF File</div><div class="c-desc">Rich Text to PDF</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'docx-to-pdf')">
+          <i class="fa-solid fa-file-word c-icon"></i><div class="c-title">Word (DOCX)</div><div class="c-desc">Convert to PDF</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pptx-to-pdf')">
+          <i class="fa-solid fa-file-powerpoint c-icon"></i><div class="c-title">PowerPoint</div><div class="c-desc">Slides to PDF</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; margin-top: 24px;">Web & Data Formats</h3>
+      <div class="conv-grid">
+        <div class="conv-card" onclick="selectConversion(this, 'html-to-pdf')">
+          <i class="fa-brands fa-html5 c-icon"></i><div class="c-title">HTML File</div><div class="c-desc">Webpage to PDF</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'md-to-pdf')">
+          <i class="fa-brands fa-markdown c-icon"></i><div class="c-title">Markdown</div><div class="c-desc">MD format to PDF</div>
         </div>
         <div class="conv-card" onclick="selectConversion(this, 'csv-to-pdf')">
-          <i class="fa-solid fa-table c-icon"></i><div class="c-title">CSV / Excel</div><div class="c-desc">Spreadsheet to PDF</div>
+          <i class="fa-solid fa-table c-icon"></i><div class="c-title">Excel / CSV</div><div class="c-desc">Sheets to PDF</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; margin-top: 24px;">Start Fresh</h3>
+      <div class="conv-grid" style="margin-bottom: 40px;">
+         <div class="conv-card" onclick="selectConversion(this, 'create-blank-pdf')">
+          <i class="fa-solid fa-square-plus c-icon"></i><div class="c-title">Blank PDF</div><div class="c-desc">Create from scratch</div>
         </div>
       </div>
     </div>
-
+    
+    
     <div id="cat-tools" class="cat-page">
-      <h2 class="section-title">PDF Tools</h2>
+      <h2 class="section-title">PDF Tools & Editor</h2>
+
+      <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; margin-top: 8px;">Organize & Structure</h3>
       <div class="conv-grid">
         <div class="conv-card" onclick="selectConversion(this, 'pdf-merge')">
-          <i class="fa-solid fa-object-group c-icon"></i><div class="c-title">Merge</div><div class="c-desc">Combine PDFs</div>
+          <i class="fa-solid fa-object-group c-icon"></i><div class="c-title">Merge PDF</div><div class="c-desc">Combine multiple files</div>
         </div>
         <div class="conv-card" onclick="selectConversion(this, 'pdf-split')">
-          <i class="fa-solid fa-scissors c-icon"></i><div class="c-title">Split</div><div class="c-desc">Extract pages</div>
+          <i class="fa-solid fa-scissors c-icon"></i><div class="c-title">Split PDF</div><div class="c-desc">Separate pages</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-remove-pages')">
+          <i class="fa-solid fa-file-circle-minus c-icon"></i><div class="c-title">Remove Pages</div><div class="c-desc">Delete specific pages</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-extract-pages')">
+          <i class="fa-solid fa-file-export c-icon"></i><div class="c-title">Extract Pages</div><div class="c-desc">Save selected pages</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-reorder')">
+          <i class="fa-solid fa-arrow-right-arrow-left c-icon"></i><div class="c-title">Organize</div><div class="c-desc">Reorder pages</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; margin-top: 24px;">Security & Signatures</h3>
+      <div class="conv-grid">
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-protect')">
+          <i class="fa-solid fa-lock c-icon"></i><div class="c-title">Protect PDF</div><div class="c-desc">Add password</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-unlock')">
+          <i class="fa-solid fa-lock-open c-icon"></i><div class="c-title">Unlock PDF</div><div class="c-desc">Remove password</div>
         </div>
         <div class="conv-card" onclick="selectConversion(this, 'pdf-watermark')">
-          <i class="fa-solid fa-stamp c-icon"></i><div class="c-title">Watermark</div><div class="c-desc">Add text stamp</div>
+          <i class="fa-solid fa-stamp c-icon"></i><div class="c-title">Watermark</div><div class="c-desc">Add text/image stamp</div>
         </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-sign')">
+          <i class="fa-solid fa-signature c-icon"></i><div class="c-title">Sign PDF</div><div class="c-desc">Add e-signature</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; margin-top: 24px;">Optimize & Fix</h3>
+      <div class="conv-grid">
         <div class="conv-card" onclick="selectConversion(this, 'pdf-compress')">
           <i class="fa-solid fa-compress c-icon"></i><div class="c-title">Compress</div><div class="c-desc">Reduce file size</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-flatten')">
+          <i class="fa-solid fa-layer-group c-icon"></i><div class="c-title">Flatten PDF</div><div class="c-desc">Make non-editable</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-metadata')">
+          <i class="fa-solid fa-tags c-icon"></i><div class="c-title">Edit Metadata</div><div class="c-desc">Change author/title</div>
+        </div>
+     <div class="conv-card" onclick="selectConversion(this, 'pdf-reverse')">
+          <i class="fa-solid fa-arrow-down-up-across-line c-icon"></i><div class="c-title">Reverse PDF</div><div class="c-desc">Invert page order</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; margin-top: 24px;">Page Manipulation</h3>
+      <div class="conv-grid" style="margin-bottom: 40px;">
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-rotate')">
+          <i class="fa-solid fa-rotate-right c-icon"></i><div class="c-title">Rotate</div><div class="c-desc">Rotate specific pages</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-page-numbers')">
+          <i class="fa-solid fa-list-ol c-icon"></i><div class="c-title">Page Numbers</div><div class="c-desc">Add numbering</div>
+        </div>
+        <div class="conv-card" onclick="selectConversion(this, 'pdf-crop')">
+          <i class="fa-solid fa-crop-simple c-icon"></i><div class="c-title">Crop PDF</div><div class="c-desc">Adjust margins</div>
         </div>
       </div>
     </div>
@@ -437,127 +584,456 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
 <script>
-// ===== ONBOARDING & APP INIT =====
+// ==========================================
+// 1. GLOBAL STATE & VARIABLES
+// ==========================================
+
+// Stores selected files (supports multiple files)
+let currentFiles = [];
+
+// Currently selected conversion type
+let currentConversion = null;
+
+// Final output file blob
+let resultBlob = null;
+
+// Final output filename
+let resultFilename = '';
+
+// File icon mapping
+const FILE_ICONS = {
+  pdf: 'fa-file-pdf',
+  doc: 'fa-file-word',
+  docx: 'fa-file-word',
+  xls: 'fa-file-excel',
+  xlsx: 'fa-file-excel',
+  ppt: 'fa-file-powerpoint',
+  pptx: 'fa-file-powerpoint',
+  jpg: 'fa-file-image',
+  jpeg: 'fa-file-image',
+  png: 'fa-image',
+  txt: 'fa-file-lines',
+  csv: 'fa-file-csv',
+  default: 'fa-file'
+};
+
+// ==========================================
+// 2. ONBOARDING & INITIALIZATION
+// ==========================================
+
 document.addEventListener("DOMContentLoaded", () => {
   const agreed = localStorage.getItem('pdfultra_agreed');
+
+  // Show onboarding modal if not accepted
   if (!agreed) {
-    document.getElementById('onboarding-modal').classList.add('show');
+    document.getElementById('onboarding-modal')?.classList.add('show');
   }
-  
-  // SW Registration
+
+  // Register Service Worker safely
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW setup skipped locally.'));
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then(() => {
+        console.log('Service Worker registered.');
+      })
+      .catch((err) => {
+        console.log('Service Worker registration failed:', err);
+      });
   }
 });
 
+// Accept policy function
 function acceptPolicy() {
   localStorage.setItem('pdfultra_agreed', 'true');
-  document.getElementById('onboarding-modal').classList.remove('show');
+
+  const modal = document.getElementById('onboarding-modal');
+  modal?.classList.remove('show');
+
   showToast("Welcome to PDF Ultra!");
 }
+// ==========================================
+// 3. UI NAVIGATION (TABS & TOASTS)
+// ==========================================
 
-// ===== TAB SWITCHING =====
-function switchTab(targetId, btnEl) {
-  // Update UI Tabs
-  document.querySelectorAll('.cat-page').forEach(p => p.classList.remove('active'));
-  document.getElementById(targetId).classList.add('active');
-  
-  // Update buttons (Desktop & Mobile)
-  document.querySelectorAll('.nav-btn, .b-nav-item').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll(`[data-target="${targetId}"]`).forEach(b => b.classList.add('active'));
-  
-  // Reset states
-  document.getElementById('conversion-panel').classList.remove('show');
-  document.querySelectorAll('.conv-card').forEach(c => c.classList.remove('selected'));
+function switchTab(targetId) {
+  // Hide all category pages
+  document.querySelectorAll('.cat-page').forEach(page => {
+    page.classList.remove('active');
+  });
+
+  // Show selected page
+  const targetPage = document.getElementById(targetId);
+  if (targetPage) {
+    targetPage.classList.add('active');
+  }
+
+  // Remove active state from all nav buttons
+  document.querySelectorAll('.nav-btn, .b-nav-item').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  // Activate matching buttons (desktop + mobile)
+  document.querySelectorAll(`[data-target="${targetId}"]`).forEach(btn => {
+    btn.classList.add('active');
+  });
+
+  // Reset conversion panel
+  document.getElementById('conversion-panel')?.classList.remove('show');
+  document.querySelectorAll('.conv-card').forEach(card => {
+    card.classList.remove('selected');
+  });
+
   hideResult();
 }
 
-// ===== FILE & CAMERA HANDLING =====
-let currentFile = null;
-let currentConversion = null;
-let resultBlob = null;
-let resultFilename = '';
 
-const FILE_ICONS = {
-  pdf: 'fa-file-pdf', doc: 'fa-file-word', docx: 'fa-file-word', xls: 'fa-file-excel', xlsx: 'fa-file-excel',
-  ppt: 'fa-file-powerpoint', pptx: 'fa-file-powerpoint', jpg: 'fa-file-image', jpeg: 'fa-file-image', png: 'fa-file-image',
-  txt: 'fa-file-lines', csv: 'fa-file-csv', default: 'fa-file'
-};
+// Toast Notification
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toast-msg');
 
-function handleDragOver(e) { e.preventDefault(); document.getElementById('upload-zone').classList.add('drag-over'); }
-function handleDragLeave(e) { document.getElementById('upload-zone').classList.remove('drag-over'); }
-function handleDrop(e) {
-  e.preventDefault(); document.getElementById('upload-zone').classList.remove('drag-over');
-  if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  if (!toast || !toastMsg) return;
+
+  toastMsg.textContent = message;
+  toast.classList.add('show');
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3000);
 }
 
+// ==========================================
+// 4. FILE & CAMERA HANDLING
+// ==========================================
+
+// Allow multiple file selection
+document.getElementById('file-input').multiple = true;
+
+
+// Drag & Drop Events
+function handleDragOver(e) {
+  e.preventDefault();
+  document.getElementById('upload-zone')?.classList.add('drag-over');
+}
+
+function handleDragLeave() {
+  document.getElementById('upload-zone')?.classList.remove('drag-over');
+}
+
+function handleDrop(e) {
+  e.preventDefault();
+  document.getElementById('upload-zone')?.classList.remove('drag-over');
+
+  if (e.dataTransfer.files.length > 0) {
+    handleFiles(e.dataTransfer.files);
+  }
+}
+
+
+// Camera Handler
 function handleCamera(file) {
-  if(!file) return;
-  // Automatically switch to Image -> PDF logic
+  if (!file) return;
+
   switchTab('cat-to-pdf');
-  handleFile(file);
-  // Auto select image to pdf conversion
+  handleFiles([file]);
+
+  // Auto-select image to PDF
   setTimeout(() => {
     const card = document.querySelector('[onclick*="img-to-pdf"]');
-    if(card) selectConversion(card, 'img-to-pdf');
+    if (card) selectConversion(card, 'img-to-pdf');
   }, 300);
 }
 
-function handleFile(file) {
-  if (!file) return;
-  currentFile = file;
-  const ext = file.name.split('.').pop().toLowerCase();
+
+// Main File Loader
+function handleFiles(files) {
+  if (!files || files.length === 0) return;
+
+  currentFiles = Array.from(files);
+  const mainFile = currentFiles[0];
+
+  const ext = mainFile.name.split('.').pop().toLowerCase();
   const iconClass = FILE_ICONS[ext] || FILE_ICONS.default;
-  const size = formatFileSize(file.size);
+  const size = formatFileSize(mainFile.size);
 
-  document.getElementById('file-icon').innerHTML = `<i class="fa-solid ${iconClass}"></i>`;
-  document.getElementById('file-name-display').textContent = file.name;
-  document.getElementById('file-meta-display').textContent = `${size} • ${ext.toUpperCase()}`;
+  // Update icon
+  document.getElementById('file-icon').innerHTML =
+    `<i class="fa-solid ${iconClass}"></i>`;
 
-  document.getElementById('file-info-bar').classList.add('show');
-  showToast(`File loaded: ${file.name}`);
+  // Update file info
+  if (currentFiles.length > 1) {
+    document.getElementById('file-name-display').textContent =
+      `${currentFiles.length} files selected`;
+    document.getElementById('file-meta-display').textContent =
+      `Multiple formats ready`;
+  } else {
+    document.getElementById('file-name-display').textContent =
+      mainFile.name;
+    document.getElementById('file-meta-display').textContent =
+      `${size} • ${ext.toUpperCase()}`;
+  }
+
+  document.getElementById('file-info-bar')?.classList.add('show');
+
+  showToast(`${currentFiles.length} file(s) loaded`);
   hideResult();
 }
 
+
+// File Size Formatter
 function formatFileSize(bytes) {
   if (bytes < 1024) return bytes + ' B';
-  if (bytes < 1048576) return (bytes/1024).toFixed(1) + ' KB';
-  return (bytes/1048576).toFixed(1) + ' MB';
+  if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / 1048576).toFixed(1) + ' MB';
 }
 
+
+// Clear All Files
 function clearFile() {
-  currentFile = null;
+  currentFiles = [];
+  currentConversion = null;
+
   document.getElementById('file-input').value = '';
   document.getElementById('camera-input').value = '';
-  document.getElementById('file-info-bar').classList.remove('show');
-  document.getElementById('conversion-panel').classList.remove('show');
+
+  document.getElementById('file-info-bar')?.classList.remove('show');
+  document.getElementById('conversion-panel')?.classList.remove('show');
+
+  document.querySelectorAll('.conv-card.selected')
+    .forEach(card => card.classList.remove('selected'));
+
   hideResult();
-  document.querySelectorAll('.conv-card.selected').forEach(c => c.classList.remove('selected'));
-  currentConversion = null;
 }
 
-// ===== CONVERSION METADATA =====
+// ==========================================
+// 5. PROGRESS & RESULT UI
+// ==========================================
+
+// Update Progress Bar
+function showProgress(percent, text) {
+  const wrap = document.getElementById('progress-wrap');
+  const bar = document.getElementById('progress-bar');
+  const label = document.getElementById('progress-text');
+
+  if (!wrap || !bar || !label) return;
+
+  wrap.classList.add('show');
+  bar.style.width = percent + '%';
+  label.textContent = text;
+}
+
+
+// Show Final Result
+function showResult(message) {
+  const resultArea = document.getElementById('result-area');
+  const resultSub = document.getElementById('result-sub');
+
+  if (!resultArea || !resultSub) return;
+
+  resultSub.textContent = message;
+  resultArea.classList.add('show');
+
+  resultArea.scrollIntoView({
+    behavior: 'smooth',
+    block: 'nearest'
+  });
+}
+
+
+// Hide Result
+function hideResult() {
+  document.getElementById('result-area')?.classList.remove('show');
+}
+
+
+// Trigger File Download
+function triggerDownload() {
+  if (!resultBlob) {
+    showToast('⚠️ No file to download!');
+    return;
+  }
+
+  saveAs(resultBlob, resultFilename);
+}
+
+
+// Reset Everything
+function resetAll() {
+  clearFile();
+}
+// ==========================================
+// 6. TOOL CONFIGURATION (METADATA)
+// ==========================================
+
 const CONVERSION_META = {
-  'pdf-to-docx': { title: 'PDF to Word', icon: 'fa-file-word', accept: '.pdf', ext: 'docx' },
-  'pdf-to-xlsx': { title: 'PDF to Excel', icon: 'fa-file-excel', accept: '.pdf', ext: 'xlsx' },
-  'pdf-to-jpg': { title: 'PDF to Images', icon: 'fa-file-image', accept: '.pdf', ext: 'zip' },
-  'pdf-to-txt': { title: 'PDF to Text', icon: 'fa-file-lines', accept: '.pdf', ext: 'txt' },
-  'img-to-pdf': { title: 'Image to PDF', icon: 'fa-image', accept: 'image/*', ext: 'pdf' },
-  'txt-to-pdf': { title: 'Text to PDF', icon: 'fa-file-lines', accept: '.txt', ext: 'pdf' },
-  'csv-to-pdf': { title: 'CSV to PDF', icon: 'fa-table', accept: '.csv,.xlsx', ext: 'pdf' },
-  'pdf-merge': { title: 'Merge PDFs', icon: 'fa-object-group', accept: '.pdf', ext: 'pdf' },
-  'pdf-split': { title: 'Split PDF', icon: 'fa-scissors', accept: '.pdf', ext: 'zip' },
-  'pdf-watermark': { title: 'Add Watermark', icon: 'fa-stamp', accept: '.pdf', ext: 'pdf' },
-  'pdf-compress': { title: 'Compress PDF', icon: 'fa-compress', accept: '.pdf', ext: 'pdf' }
+
+  // ===============================
+  // A. EXPORT (PDF → Others)
+  // ===============================
+
+  'pdf-to-docx':      { title: 'PDF to Word',        icon: 'fa-file-word',        accept: '.pdf', ext: 'docx' },
+  'pdf-to-pptx':      { title: 'PDF to PowerPoint',  icon: 'fa-file-powerpoint',  accept: '.pdf', ext: 'pptx' },
+  'pdf-to-txt':       { title: 'PDF to Text',        icon: 'fa-file-lines',       accept: '.pdf', ext: 'txt' },
+  'pdf-to-rtf':       { title: 'PDF to RTF',         icon: 'fa-file-pen',         accept: '.pdf', ext: 'rtf' },
+
+  'pdf-to-jpg':       { title: 'PDF to JPG',         icon: 'fa-file-image',       accept: '.pdf', ext: 'zip' },
+  'pdf-to-png':       { title: 'PDF to PNG',         icon: 'fa-image',            accept: '.pdf', ext: 'zip' },
+  'pdf-to-svg':       { title: 'PDF to SVG',         icon: 'fa-bezier-curve',     accept: '.pdf', ext: 'zip' },
+  'pdf-extract-img':  { title: 'Extract Images',     icon: 'fa-images',           accept: '.pdf', ext: 'zip' },
+
+  'pdf-to-xlsx':      { title: 'PDF to Excel',       icon: 'fa-file-excel',       accept: '.pdf', ext: 'xlsx' },
+  'pdf-to-csv':       { title: 'PDF to CSV',         icon: 'fa-file-csv',         accept: '.pdf', ext: 'csv' },
+  'pdf-to-html':      { title: 'PDF to HTML',        icon: 'fa-html5',            accept: '.pdf', ext: 'html' },
+  'pdf-to-json':      { title: 'PDF to JSON',        icon: 'fa-file-code',        accept: '.pdf', ext: 'json' },
+  'pdf-to-epub':      { title: 'PDF to EPUB',        icon: 'fa-book-open',        accept: '.pdf', ext: 'epub' },
+
+  'pdf-to-audio':     { title: 'PDF to Audio',       icon: 'fa-file-audio',       accept: '.pdf', ext: 'mp3' },
+  'pdf-to-markdown':  { title: 'PDF to Markdown',    icon: 'fa-markdown',         accept: '.pdf', ext: 'md' },
+  'pdf-to-pdfa':      { title: 'PDF to PDF/A',       icon: 'fa-file-shield',      accept: '.pdf', ext: 'pdf' },
+  'pdf-extract-fonts':{ title: 'Extract Fonts',      icon: 'fa-font',             accept: '.pdf', ext: 'zip' },
+  'pdf-to-bw':        { title: 'PDF to Grayscale',   icon: 'fa-circle-half-stroke', accept: '.pdf', ext: 'pdf' },
+
+
+  // ===============================
+  // B. CREATE (Others → PDF)
+  // ===============================
+
+  'img-to-pdf':       { title: 'Image to PDF',       icon: 'fa-image',            accept: 'image/*', ext: 'pdf', multiple: true },
+  'txt-to-pdf':       { title: 'Text to PDF',        icon: 'fa-file-lines',       accept: '.txt', ext: 'pdf' },
+  'rtf-to-pdf':       { title: 'RTF to PDF',         icon: 'fa-file-pen',         accept: '.rtf', ext: 'pdf' },
+  'docx-to-pdf':      { title: 'Word to PDF',        icon: 'fa-file-word',        accept: '.docx', ext: 'pdf' },
+  'pptx-to-pdf':      { title: 'PowerPoint to PDF',  icon: 'fa-file-powerpoint',  accept: '.pptx', ext: 'pdf' },
+  'html-to-pdf':      { title: 'HTML to PDF',        icon: 'fa-html5',            accept: '.html', ext: 'pdf' },
+  'md-to-pdf':        { title: 'Markdown to PDF',    icon: 'fa-markdown',         accept: '.md', ext: 'pdf' },
+  'csv-to-pdf':       { title: 'CSV/Excel to PDF',   icon: 'fa-table',            accept: '.csv,.xlsx', ext: 'pdf' },
+
+  'create-blank-pdf': { title: 'Create Blank PDF',   icon: 'fa-square-plus',      accept: '', ext: 'pdf' },
+
+
+  // ===============================
+  // C. TOOLS (Edit & Optimize)
+  // ===============================
+
+  'pdf-merge':        { title: 'Merge PDFs',          icon: 'fa-object-group',      accept: '.pdf', ext: 'pdf', multiple: true },
+  'pdf-split':        { title: 'Split PDF',           icon: 'fa-scissors',          accept: '.pdf', ext: 'pdf' },
+  'pdf-remove-pages': { title: 'Remove Pages',        icon: 'fa-file-circle-minus', accept: '.pdf', ext: 'pdf' },
+  'pdf-extract-pages':{ title: 'Extract Pages',       icon: 'fa-file-export',       accept: '.pdf', ext: 'pdf' },
+  'pdf-reorder':      { title: 'Reorder Pages',       icon: 'fa-arrow-right-arrow-left', accept: '.pdf', ext: 'pdf' },
+
+  'pdf-protect':      { title: 'Protect PDF',         icon: 'fa-lock',              accept: '.pdf', ext: 'pdf' },
+  'pdf-unlock':       { title: 'Unlock PDF',          icon: 'fa-lock-open',         accept: '.pdf', ext: 'pdf' },
+  'pdf-watermark':    { title: 'Add Watermark',       icon: 'fa-stamp',             accept: '.pdf', ext: 'pdf' },
+  'pdf-sign':         { title: 'Sign PDF',            icon: 'fa-signature',         accept: '.pdf', ext: 'pdf' },
+
+  'pdf-compress':     { title: 'Compress PDF',        icon: 'fa-compress',          accept: '.pdf', ext: 'pdf' },
+  'pdf-flatten':      { title: 'Flatten PDF',         icon: 'fa-layer-group',       accept: '.pdf', ext: 'pdf' },
+  'pdf-metadata':     { title: 'Edit Metadata',       icon: 'fa-tags',              accept: '.pdf', ext: 'pdf' },
+
+  'pdf-reverse':      { title: 'Reverse PDF Pages',   icon: 'fa-arrow-down-up-across-line', accept: '.pdf', ext: 'pdf' },
+  'pdf-rotate':       { title: 'Rotate PDF',          icon: 'fa-rotate-right',      accept: '.pdf', ext: 'pdf' },
+  'pdf-page-numbers': { title: 'Add Page Numbers',    icon: 'fa-list-ol',           accept: '.pdf', ext: 'pdf' },
+  'pdf-crop':         { title: 'Crop PDF',            icon: 'fa-crop-simple',       accept: '.pdf', ext: 'pdf' }
 };
+
+// ==========================================
+// 7. PANEL OPTIONS RENDERING
+// ==========================================
 
 const CONVERSION_OPTIONS = {
-  'pdf-to-jpg': `<div class="opt-group"><label class="opt-label">Quality</label><select class="opt-control" id="opt-q"><option value="2">Standard</option><option value="3" selected>High</option></select></div>`,
-  'img-to-pdf': `<div class="opt-group"><label class="opt-label">Page Size</label><select class="opt-control" id="opt-size"><option value="a4" selected>A4</option><option value="fit">Fit to Image</option></select></div>`,
-  'pdf-watermark': `<div class="opt-group"><label class="opt-label">Text</label><input type="text" class="opt-control" id="opt-wm" value="CONFIDENTIAL"></div>`,
+
+  'pdf-to-jpg': `
+    <div class="opt-group">
+      <label class="opt-label">Quality</label>
+      <select class="opt-control" id="opt-q">
+        <option value="2">Standard</option>
+        <option value="3" selected>High Resolution</option>
+      </select>
+    </div>
+  `,
+
+  'pdf-to-png': `
+    <div class="opt-group">
+      <label class="opt-label">Background</label>
+      <select class="opt-control" id="opt-bg">
+        <option value="transparent">Transparent</option>
+        <option value="white" selected>White</option>
+      </select>
+    </div>
+  `,
+
+  'img-to-pdf': `
+    <div class="opt-group">
+      <label class="opt-label">Page Size</label>
+      <select class="opt-control" id="opt-size">
+        <option value="a4" selected>A4 Portrait</option>
+        <option value="fit">Fit to Image</option>
+      </select>
+    </div>
+  `,
+
+  'pdf-watermark': `
+    <div class="opt-group">
+      <label class="opt-label">Watermark Text</label>
+      <input type="text" class="opt-control" id="opt-wm" value="CONFIDENTIAL">
+    </div>
+  `,
+
+  'pdf-protect': `
+    <div class="opt-group">
+      <label class="opt-label">Set Password</label>
+      <input type="password" class="opt-control" id="opt-pass" placeholder="Enter secure password">
+    </div>
+  `,
+
+  'pdf-unlock': `
+    <div class="opt-group">
+      <label class="opt-label">Current Password</label>
+      <input type="password" class="opt-control" id="opt-unlock-pass" placeholder="Enter password to unlock">
+    </div>
+  `,
+
+  'pdf-rotate': `
+    <div class="opt-group">
+      <label class="opt-label">Rotation</label>
+      <select class="opt-control" id="opt-rotate">
+        <option value="90">90° Right</option>
+        <option value="180">180° Upside Down</option>
+        <option value="270">90° Left</option>
+      </select>
+    </div>
+  `,
+
+  'pdf-split': `
+    <div class="opt-group">
+      <label class="opt-label">Extract Page Number</label>
+      <input type="number" class="opt-control" id="opt-split-page" value="1" min="1">
+    </div>
+  `,
+
+  'pdf-remove-pages': `
+    <div class="opt-group">
+      <label class="opt-label">Pages to Remove (e.g. 1, 3, 5-7)</label>
+      <input type="text" class="opt-control" id="opt-remove-pages" placeholder="e.g. 1, 3, 5-7">
+    </div>
+  `,
+
+  'pdf-metadata': `
+    <div class="opt-group">
+      <label class="opt-label">Title</label>
+      <input type="text" class="opt-control" id="opt-meta-title" placeholder="Document Title">
+    </div>
+    <div class="opt-group">
+      <label class="opt-label">Author</label>
+      <input type="text" class="opt-control" id="opt-meta-author" placeholder="Author Name">
+    </div>
+  `
 };
 
+// ==========================================
+// 8. SELECT TOOL & OPEN PANEL
+// ==========================================
 function selectConversion(el, type) {
+  // 1. Highlight the selected card
   document.querySelectorAll('.conv-card.selected').forEach(c => c.classList.remove('selected'));
   el.classList.add('selected');
   currentConversion = type;
@@ -565,140 +1041,350 @@ function selectConversion(el, type) {
   const meta = CONVERSION_META[type];
   if (!meta) return;
 
+  // Special check for Blank PDF (doesn't need an input file)
+  if(type !== 'create-blank-pdf' && currentFiles.length === 0) {
+      showToast('⚠️ Please select or drop a file first!');
+      // Scroll up to upload zone
+      document.getElementById('upload-zone').scrollIntoView({ behavior: 'smooth' });
+      return;
+  }
+
+  // 2. Setup File Input based on tool requirement
+  document.getElementById('file-input').accept = meta.accept;
+  
+  // If tool supports multiple files (Merge, Img to PDF), warn user if they only picked one.
+  if (meta.multiple && currentFiles.length === 1 && type !== 'img-to-pdf') {
+       showToast('💡 Tip: You can select multiple files for this tool!');
+  }
+
+  // 3. Update Panel UI
   document.getElementById('panel-icon').className = `fa-solid ${meta.icon}`;
   document.getElementById('panel-title-text').textContent = meta.title;
-  document.getElementById('panel-options').innerHTML = CONVERSION_OPTIONS[type] || '<div class="opt-group"><span class="opt-label">No extra settings required.</span></div>';
+  
+  // Load specific options or default text
+  document.getElementById('panel-options').innerHTML = CONVERSION_OPTIONS[type] || '<div class="opt-group"><span class="opt-label">No extra settings required for this tool.</span></div>';
 
+  // 4. Show Panel
   document.getElementById('conversion-panel').classList.add('show');
   document.getElementById('progress-wrap').classList.remove('show');
-  document.getElementById('file-input').accept = meta.accept;
   hideResult();
   
   // Scroll to panel smoothly
   setTimeout(() => document.getElementById('conversion-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
 }
 
-// ===== CONVERSION EXECUTION =====
+// ==========================================
+// 9. MASTER ROUTER (EXECUTION)
+// ==========================================
+
 async function doConvert() {
-  if (!currentFile) return showToast('⚠️ Please select or scan a file first!');
-  if (!currentConversion) return showToast('⚠️ Please select a tool!');
+
+  // Validation
+  if (currentConversion !== 'create-blank-pdf' && currentFiles.length === 0) {
+    showToast('⚠️ Please select a file first!');
+    return;
+  }
+
+  if (!currentConversion) {
+    showToast('⚠️ Please select a tool first!');
+    return;
+  }
 
   const btn = document.getElementById('btn-convert');
-  btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
-  showProgress(10, 'Initializing engine...');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+
+  showProgress(10, 'Initializing...');
   hideResult();
 
   try {
-    // Basic wiring for UI demonstration (Connects to your existing heavy logic)
-    const baseName = currentFile.name.replace(/\.[^.]+$/, '');
-    const meta = CONVERSION_META[currentConversion];
-    let blob;
 
-    // --- CORE LOGIC ROUTING ---
-    if(currentConversion === 'pdf-to-txt') blob = await convPdfToTxt(currentFile);
-    else if(currentConversion === 'img-to-pdf') blob = await convImgToPdf(currentFile);
-    else if(currentConversion === 'pdf-compress') blob = await convPdfCompress(currentFile);
-    else if(currentConversion === 'pdf-watermark') blob = await convPdfWatermark(currentFile);
-    else {
-      // Dummy logic for other buttons to prove UI works. (In production, wire all your functions here)
-      showProgress(50, 'Converting...');
-      await new Promise(r => setTimeout(r, 1500)); 
-      blob = new Blob(["Processed content"], {type: "text/plain"});
+    const meta = CONVERSION_META[currentConversion];
+    let baseName = currentFiles.length > 0
+      ? currentFiles[0].name.replace(/\.[^.]+$/, '')
+      : 'document';
+
+    let blob = null;
+
+    // ===============================
+    // ROUTING LOGIC
+    // ===============================
+
+    if (currentConversion === 'pdf-merge') {
+      blob = await doPdfMerge(currentFiles);
+
+    } else if (currentConversion === 'pdf-protect') {
+      blob = await doPdfProtect(currentFiles[0]);
+
+    } else if (currentConversion === 'pdf-rotate') {
+      blob = await doPdfRotate(currentFiles[0]);
+
+    } else if (currentConversion === 'pdf-watermark') {
+      blob = await doPdfWatermark(currentFiles[0]);
+
+    } else if (currentConversion === 'pdf-reverse') {
+      blob = await doPdfReverse(currentFiles[0]);
+
+    } else if (currentConversion === 'create-blank-pdf') {
+      blob = await doCreateBlankPdf();
+
+    } else if (currentConversion === 'img-to-pdf') {
+      blob = await doImgToPdf(currentFiles);
+
+    } else if (currentConversion === 'pdf-to-txt') {
+      blob = await doPdfToTxt(currentFiles[0]);
+
+    } else {
+      // Placeholder for unimplemented tools
+      showProgress(50, 'Feature not fully implemented yet...');
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      blob = new Blob(
+        [`${meta.title} feature is not implemented yet.`],
+        { type: 'text/plain' }
+      );
     }
+
+    // ===============================
+    // FINALIZE RESULT
+    // ===============================
 
     resultFilename = `${baseName}_ultra.${meta.ext}`;
     resultBlob = blob;
-    
-    showProgress(100, 'Done!');
+
+    showProgress(100, 'Completed');
+
     setTimeout(() => {
       document.getElementById('progress-wrap').classList.remove('show');
-      showResult(`Successfully created: ${resultFilename}`);
+      showResult('Successfully processed!');
     }, 500);
 
-  } catch (err) {
-    console.error(err); showToast('❌ Error: ' + err.message);
+  } catch (error) {
+    console.error(error);
+    showToast('❌ Error: ' + error.message);
+    document.getElementById('progress-wrap').classList.remove('show');
   }
 
-  btn.disabled = false; btn.innerHTML = '<i class="fa-solid fa-bolt"></i> Process File';
+  // Reset button
+  btn.disabled = false;
+  btn.innerHTML = '<i class="fa-solid fa-bolt"></i> Process File';
+}
+// ==========================================
+// 10. CORE UTILITY FUNCTIONS
+// ==========================================
+
+// Read file as DataURL (for images)
+async function readFileAsDataURL(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = e => resolve(e.target.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
 }
 
-function showProgress(pct, text) {
-  document.getElementById('progress-wrap').classList.add('show');
-  document.getElementById('progress-bar').style.width = pct + '%';
-  document.getElementById('progress-text').textContent = text;
+
+// Read file as ArrayBuffer (for PDF processing)
+async function readFileAsArrayBuffer(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = e => resolve(e.target.result);
+    reader.onerror = reject;
+    reader.readAsArrayBuffer(file);
+  });
 }
 
-function showResult(msg) {
-  document.getElementById('result-sub').textContent = msg;
-  document.getElementById('result-area').classList.add('show');
-  document.getElementById('result-area').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-}
-function hideResult() { document.getElementById('result-area').classList.remove('show'); }
 
-function triggerDownload() {
-  if(resultBlob) saveAs(resultBlob, resultFilename);
-}
-function resetAll() { clearFile(); }
+// Setup pdf.js safely
+const pdfjsLib = window.pdfjsLib;
 
-// ===== UTILS =====
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  document.getElementById('toast-msg').textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 3000);
+if (pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+} else {
+  console.error("pdf.js not loaded correctly.");
+}
+// ==========================================
+// 11. TOOL SPECIFIC LOGIC
+// ==========================================
+
+
+// ===============================
+// A. TOOLS & EDITING
+// ===============================
+
+async function doPdfMerge(files) {
+  showProgress(20, 'Creating merged document...');
+  const mergedPdf = await PDFLib.PDFDocument.create();
+
+  for (let i = 0; i < files.length; i++) {
+    showProgress(20 + ((i / files.length) * 50), `Processing file ${i + 1}/${files.length}...`);
+
+    const ab = await readFileAsArrayBuffer(files[i]);
+    const pdf = await PDFLib.PDFDocument.load(ab);
+
+    const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+    copiedPages.forEach(page => mergedPdf.addPage(page));
+  }
+
+  showProgress(85, 'Saving merged PDF...');
+  const pdfBytes = await mergedPdf.save();
+  return new Blob([pdfBytes], { type: 'application/pdf' });
 }
 
-// ===== PRESERVED CONVERSION LOGIC (MINIFIED) =====
-// Maine aapki main functions ko yahan rakha hai taaki app chal sake.
-async function readFileAsArrayBuffer(file) { return new Promise((res, rej) => { const r = new FileReader(); r.onload = e => res(e.target.result); r.readAsArrayBuffer(file); }); }
-async function readFileAsText(file) { return new Promise((res, rej) => { const r = new FileReader(); r.onload = e => res(e.target.result); r.readAsText(file); }); }
-async function readFileAsDataURL(file) { return new Promise((res, rej) => { const r = new FileReader(); r.onload = e => res(e.target.result); r.readAsDataURL(file); }); }
-async function loadPdfDoc(file) {
+
+async function doPdfReverse(file) {
+  showProgress(30, 'Reversing page order...');
+
   const ab = await readFileAsArrayBuffer(file);
-  const lib = window['pdfjs-dist/build/pdf'];
-  lib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-  return await lib.getDocument({ data: new Uint8Array(ab) }).promise;
+  const pdfDoc = await PDFLib.PDFDocument.load(ab);
+  const newPdf = await PDFLib.PDFDocument.create();
+
+  const reversedIndices = pdfDoc.getPageIndices().reverse();
+  const copiedPages = await newPdf.copyPages(pdfDoc, reversedIndices);
+  copiedPages.forEach(page => newPdf.addPage(page));
+
+  showProgress(90, 'Saving reversed PDF...');
+  const pdfBytes = await newPdf.save();
+  return new Blob([pdfBytes], { type: 'application/pdf' });
 }
-async function extractPdfText(file) {
-  const pdf = await loadPdfDoc(file); const pages = [];
-  for (let i = 1; i <= pdf.numPages; i++) {
-    const page = await pdf.getPage(i); const textContent = await page.getTextContent();
-    pages.push({ num: i, text: textContent.items.map(item => item.str).join(' ') });
-  }
-  return pages;
+
+
+async function doPdfProtect(file) {
+  const password = document.getElementById('opt-pass')?.value;
+  if (!password) throw new Error("Please enter a password.");
+
+  showProgress(40, 'Encrypting document...');
+
+  const ab = await readFileAsArrayBuffer(file);
+  const pdfDoc = await PDFLib.PDFDocument.load(ab);
+
+  const pdfBytes = await pdfDoc.save({
+    userPassword: password,
+    ownerPassword: password,
+    permissions: { printing: 'highResolution', modifying: false }
+  });
+
+  return new Blob([pdfBytes], { type: 'application/pdf' });
 }
-async function convPdfToTxt(file) {
-  const pages = await extractPdfText(file);
-  const content = pages.map(p => `--- Page ${p.num} ---\n\n${p.text}`).join('\n\n');
-  return new Blob([content], { type: 'text/plain' });
+
+
+async function doPdfRotate(file) {
+  const degrees = parseInt(document.getElementById('opt-rotate')?.value || '90');
+
+  showProgress(40, 'Rotating pages...');
+
+  const ab = await readFileAsArrayBuffer(file);
+  const pdfDoc = await PDFLib.PDFDocument.load(ab);
+
+  pdfDoc.getPages().forEach(page => {
+    const current = page.getRotation().angle;
+    page.setRotation(PDFLib.degrees(current + degrees));
+  });
+
+  const pdfBytes = await pdfDoc.save();
+  return new Blob([pdfBytes], { type: 'application/pdf' });
 }
-async function convImgToPdf(file) {
-  const dataUrl = await readFileAsDataURL(file);
+
+
+async function doPdfWatermark(file) {
+  const text = document.getElementById('opt-wm')?.value || 'CONFIDENTIAL';
+
+  showProgress(40, 'Applying watermark...');
+
+  const ab = await readFileAsArrayBuffer(file);
+  const pdfDoc = await PDFLib.PDFDocument.load(ab);
+
+  const font = await pdfDoc.embedFont(PDFLib.StandardFonts.HelveticaBold);
+
+  pdfDoc.getPages().forEach(page => {
+    const { width, height } = page.getSize();
+
+    page.drawText(text, {
+      x: 50,
+      y: height / 2,
+      size: 40,
+      font,
+      color: PDFLib.rgb(0.5, 0.5, 0.5),
+      opacity: 0.3,
+      rotate: PDFLib.degrees(45)
+    });
+  });
+
+  const pdfBytes = await pdfDoc.save();
+  return new Blob([pdfBytes], { type: 'application/pdf' });
+}
+
+
+async function doCreateBlankPdf() {
+  showProgress(50, 'Generating blank PDF...');
+  const pdfDoc = await PDFLib.PDFDocument.create();
+  pdfDoc.addPage([595.28, 841.89]); // A4
+  const pdfBytes = await pdfDoc.save();
+  return new Blob([pdfBytes], { type: 'application/pdf' });
+}
+
+
+// ===============================
+// B. CREATE PDF (Images → PDF)
+// ===============================
+
+async function doImgToPdf(files) {
+  showProgress(20, 'Initializing PDF...');
   const { jsPDF } = window.jspdf;
-  const img = new Image();
-  await new Promise(res => { img.onload = res; img.src = dataUrl; });
-  const w = img.width * 0.264583, h = img.height * 0.264583;
-  const doc = new jsPDF({ orientation: w > h ? 'landscape' : 'portrait', unit: 'mm', format: [w, h] });
-  doc.addImage(dataUrl, 'JPEG', 0, 0, w, h);
+  let doc = null;
+
+  for (let i = 0; i < files.length; i++) {
+    showProgress(20 + ((i / files.length) * 60), `Processing image ${i + 1}/${files.length}...`);
+
+    const dataUrl = await readFileAsDataURL(files[i]);
+
+    const img = new Image();
+    await new Promise(res => { img.onload = res; img.src = dataUrl; });
+
+    const w = img.width * 0.264583;
+    const h = img.height * 0.264583;
+    const orientation = w > h ? 'landscape' : 'portrait';
+
+    if (i === 0) {
+      doc = new jsPDF({ orientation, unit: 'mm', format: [w, h] });
+    } else {
+      doc.addPage([w, h], orientation);
+    }
+
+    const imgType = files[i].type === 'image/png' ? 'PNG' : 'JPEG';
+    doc.addImage(dataUrl, imgType, 0, 0, w, h);
+  }
+
+  showProgress(90, 'Finalizing PDF...');
   return doc.output('blob');
 }
-async function convPdfCompress(file) {
+
+
+// ===============================
+// C. EXPORT PDF (PDF → TXT)
+// ===============================
+
+async function doPdfToTxt(file) {
+  showProgress(30, 'Reading PDF...');
+
   const ab = await readFileAsArrayBuffer(file);
-  const srcDoc = await PDFLib.PDFDocument.load(ab, { updateMetadata: false });
-  const bytes = await srcDoc.save({ useObjectStreams: true });
-  return new Blob([bytes], { type: 'application/pdf' });
-}
-async function convPdfWatermark(file) {
-  const ab = await readFileAsArrayBuffer(file);
-  const srcDoc = await PDFLib.PDFDocument.load(ab);
-  const wmText = document.getElementById('opt-wm')?.value || 'CONFIDENTIAL';
-  const font = await srcDoc.embedFont(PDFLib.StandardFonts.HelveticaBold);
-  srcDoc.getPages().forEach(page => {
-    const { width, height } = page.getSize();
-    page.drawText(wmText, { x: 50, y: height/2, size: 40, font, color: PDFLib.rgb(0.5, 0.5, 0.5), opacity: 0.3, rotate: PDFLib.degrees(45) });
-  });
-  const bytes = await srcDoc.save();
-  return new Blob([bytes], { type: 'application/pdf' });
+  const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(ab) }).promise;
+
+  let fullText = "";
+
+  for (let i = 1; i <= pdf.numPages; i++) {
+    showProgress(30 + ((i / pdf.numPages) * 50), `Extracting page ${i}...`);
+
+    const page = await pdf.getPage(i);
+    const textContent = await page.getTextContent();
+
+    const pageText = textContent.items.map(item => item.str).join(' ');
+    fullText += `--- Page ${i} ---\n\n${pageText}\n\n`;
+  }
+
+  showProgress(90, 'Creating text file...');
+  return new Blob([fullText], { type: 'text/plain' });
 }
 </script>
 </body>
