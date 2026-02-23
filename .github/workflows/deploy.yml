@@ -15,3 +15,6 @@ jobs:
 
       - name: Print Success
         run: echo "GitHub Actions is running successfully!"
+    
+      - name: succed
+        run: ./gradlew assembleRelease
